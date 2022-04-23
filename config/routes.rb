@@ -18,7 +18,10 @@ Rails
         root 'top#index'
         get 'login' => 'sessions#new', :as => :login
         resource :session, only: %i[create destroy]
-        resources :staff_members
+        resources :staff_members do
+          resources :staff_events, only: [:index]
+        end
+        resources :staff_events, only: [:index]
       end
     end
 
