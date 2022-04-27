@@ -10,7 +10,7 @@ Rails
         get 'login' => 'sessions#new', :as => :login
         resource :session, only: %i[create destroy]
         resource :account, except: %i[new create destroy]
-        resource :password, only: %i[show edit udpate]
+        resource :password, only: %i[show edit update]
       end
     end
 
