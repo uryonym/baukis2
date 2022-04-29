@@ -42,7 +42,7 @@ company_names = %W[OIAX ABC XYZ]
         given_name_kana: gn[1],
         password: 'password',
         birthday: 60.years.ago.advance(seconds: rand(40.years)).to_date,
-        gender: m < 5 ? 'make' : 'female',
+        gender: m < 5 ? 'male' : 'female',
       )
     c.create_home_address!(
       postal_code: sprintf('%07d', rand(10_000_000)),

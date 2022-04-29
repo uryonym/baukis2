@@ -11,6 +11,7 @@ Rails
         resource :session, only: %i[create destroy]
         resource :account, except: %i[new create destroy]
         resource :password, only: %i[show edit update]
+        resources :customers
       end
     end
 
