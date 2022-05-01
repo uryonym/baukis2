@@ -1,6 +1,5 @@
-class Administrator < ApplicationRecord
-  include EmailHolder
-  include PasswordHolder
+module PasswordHolder
+  extend ActiveSupport::Concern
 
   def password=(raw_password)
     if raw_password.kind_of?(String)
