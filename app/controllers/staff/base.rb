@@ -14,7 +14,7 @@ class Staff::Base < ApplicationController
 
   private def authorize
     unless current_staff_member
-      flash.notice = '職員としてろぐいんしてください。'
+      flash.notice = '職員としてログインしてください。'
       redirect_to :staff_login
     end
   end
