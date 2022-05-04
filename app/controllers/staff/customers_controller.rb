@@ -59,6 +59,9 @@ class Staff::CustomersController < Staff::Base
         prefecture
         city
         phone_number
+        gender
+        postal_code
+        last_four_digits_of_phone_number
       ],
     )
   end
