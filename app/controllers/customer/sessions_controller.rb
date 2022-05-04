@@ -31,7 +31,7 @@ class Customer::SessionsController < Customer::Base
   end
 
   private def login_form_params
-    params.require(:customer_login_form).permit(:email, :password)
+    params.require(:customer_login_form).permit(:email, :password, :remember_me)
   end
 
   def destroy
