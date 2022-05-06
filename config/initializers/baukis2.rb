@@ -12,5 +12,6 @@ Rails.application.configure do
       host: 'example.com',
       path: 'mypage',
     },
+    restrict_ip_addresses: true,
   }
 end
