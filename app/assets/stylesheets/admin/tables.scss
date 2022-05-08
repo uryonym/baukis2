@@ -24,7 +24,8 @@ table {
       padding: $narrow;
     }
     td.email,
-    td.date {
+    td.date,
+    td.ip {
       font-family: monospace;
     }
     td.boolean {

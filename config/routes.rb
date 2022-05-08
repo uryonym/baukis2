@@ -24,6 +24,9 @@ Rails
           resources :staff_events, only: [:index]
         end
         resources :staff_events, only: [:index]
+        resources :allowed_sources, only: %i[index create] do
+          delete :delete, on: :collection
+        end
       end
     end
 
