@@ -12,6 +12,7 @@ Rails
         resource :account, except: %i[new create destroy]
         resource :password, only: %i[show edit update]
         resources :customers
+        resources :programs
       end
     end
 

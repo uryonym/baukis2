@@ -31,6 +31,9 @@ table {
     td.boolean {
       text-align: center;
     }
+    td.numeric {
+      text-align: right;
+    }
     td.actions {
       text-align: center;
       color: $dark_gray;
