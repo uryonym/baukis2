@@ -41,6 +41,7 @@ Rails
         get 'login' => 'sessions#new', :as => :login
 
         resource :session, only: %i[create destroy]
+        resources :programs, only: %i[index show]
       end
     end
   end
