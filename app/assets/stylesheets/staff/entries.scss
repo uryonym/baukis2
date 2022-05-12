@@ -18,12 +18,12 @@ div.table-wrapper {
         background-color: $very_light_gray;
       }
     }
-    div.button-wrapper {
-      margin: $wide;
-      text-align: center;
-      button {
-        padding: $moderate;
-      }
+  }
+  div.button-wrapper {
+    margin: $wide;
+    text-align: center;
+    button {
+      padding: $moderate;
     }
   }
 }

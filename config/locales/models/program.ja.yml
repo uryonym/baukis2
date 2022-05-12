@@ -15,10 +15,10 @@ ja:
         program:
           attributes:
             application_start_time:
-              after_or_equal_to: には2000年1月1日以降の日付を指定してください。
-              before: には現在から1年後までの日時を指定してください。
+              date_after_or_equal_to: には2000年1月1日以降の日付を指定してください。
+              date_before: には現在から1年後までの日時を指定してください。
             application_end_time:
-              after: には申し込み開始日時よりも後の日時を指定してください。
-              before: には申し込み開始日時から90日以内の日時を指定してください。
+              date_after: には申し込み開始日時よりも後の日時を指定してください。
+              date_before: には申し込み開始日時から90日以内の日時を指定してください。
             max_number_of_participants:
               less_than_min_number: には最小参加者数以上の数を指定してください。

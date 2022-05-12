@@ -35,7 +35,7 @@ class FormPresenter
   end
 
   def number_field_block(name, label_text, options = {})
-    markup(:div) do |m|
+    markup(:div, class: 'input-block') do |m|
       m << decorated_label(name, label_text, options)
       m << form_builder.number_field(name, options)
       if options[:max]

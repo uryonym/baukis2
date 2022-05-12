@@ -12,7 +12,11 @@ Rails
         resource :account, except: %i[new create destroy]
         resource :password, only: %i[show edit update]
         resources :customers
-        resources :programs
+        resources :programs do
+          resources :entries, only: [] do
+            patch :update_all, on: :collection
+          end
+        end
       end
     end
 
