@@ -41,6 +41,7 @@ Rails
         get 'login' => 'sessions#new', :as => :login
 
         resource :session, only: %i[create destroy]
+        resource :account, except: %i[new create destroy]
         resources :programs, only: %i[index show] do
           resource :entry, only: [:create] do
             patch :cancel
