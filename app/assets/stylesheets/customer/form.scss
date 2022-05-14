@@ -27,6 +27,16 @@ div#wrapper {
             font-size: $small;
             color: $dark_gray;
           }
+          div.field-value {
+            margin-left: $wide;
+            font-weight: bold;
+          }
+          div.readonly {
+            color: $dark_gray;
+          }
+          span.field-value {
+            font-weight: bold;
+          }
         }
         div.input-block {
           input {

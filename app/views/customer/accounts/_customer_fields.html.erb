@@ -1,7 +1,12 @@
 <%= f.fields_for :customer, f.object.customer do |ff| %>
   <%=
     markup do |m|
-      p = CustomerFormPresenter.new(ff, self)
+      p =
+        if confirming
+          ConfirmingCustomerFormPresenter.new(ff, self)
+        else
+          CustomerFormPresenter.new(ff, self)
+        end
       p.with_options(required: true) do |q|
         m <<
           q.text_field_block(:email, 'メールアドレス', size: 32, disabled: true)
@@ -17,7 +22,17 @@
             .object
             .personal_phones
             .each_with_index do |phone, index|
-              m << render('phone_fields', f: ff, phone: phone, index: index)
+              if confirming
+                m <<
+                  render(
+                    'confirming_phone_fields',
+                    f: ff,
+                    phone: phone,
+                    index: index,
+                  )
+              else
+                m << render('phone_fields', f: ff, phone: phone, index: index)
+              end
             end
         end
       end
