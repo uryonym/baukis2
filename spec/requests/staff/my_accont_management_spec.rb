@@ -46,6 +46,7 @@ describe '職員による自分のアカウントの管理' do
             params: {
               id: staff_member.id,
               staff_member: params_hash,
+              commit: '更新',
             }
       staff_member.reload
       expect(staff_member.email).to eq('test@example.com')
@@ -53,7 +54,7 @@ describe '職員による自分のアカウントの管理' do
 
     example '例外 ActionController::ParameterMissingが発生' do
       expect {
-        patch staff_account_url, params: { id: staff_member.id }
+        patch staff_account_url, params: { id: staff_member.id, commit: '更新' }
       }.to raise_error(ActionController::ParameterMissing)
     end
 
@@ -64,6 +65,7 @@ describe '職員による自分のアカウントの管理' do
               params: {
                 id: staff_member.id,
                 staff_member: params_hash,
+                commit: '更新',
               }
       }.not_to change { staff_member.end_date }
     end
