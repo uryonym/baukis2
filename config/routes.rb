@@ -51,6 +51,9 @@ Rails
             patch :cancel
           end
         end
+        resources :messages, only: %i[new create] do
+          post :confirm, on: :collection
+        end
       end
     end
   end

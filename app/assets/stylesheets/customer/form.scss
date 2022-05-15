@@ -71,7 +71,8 @@ div#wrapper {
           label {
             color: $red;
           }
-          input {
+          input,
+          textarea {
             background-color: $pink;
           }
         }
