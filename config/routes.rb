@@ -19,6 +19,7 @@ Rails
             patch :update_all, on: :collection
           end
         end
+        get 'messages/count' => 'ajax#message_count'
       end
     end
 
