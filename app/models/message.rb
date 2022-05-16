@@ -9,6 +9,10 @@ class Message < ApplicationRecord
              class_name: 'Message',
              foreign_key: 'parent_id',
              optional: true
+  has_many :children,
+           class_name: 'Message',
+           foreign_key: 'parent_id',
+           dependent: :destroy
 
   before_validation do
     if parent
