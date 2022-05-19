@@ -65,8 +65,11 @@ Rails
             patch :cancel
           end
         end
-        resources :messages, only: %i[new create] do
+        resources :messages, except: %i[edit update] do
           post :confirm, on: :collection
+          resource :reply, only: %i[new create] do
+            post :confirm
+          end
         end
       end
     end
