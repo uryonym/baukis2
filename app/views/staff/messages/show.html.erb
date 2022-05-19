@@ -30,6 +30,19 @@
       <th>作成日時</th>
       <td class="date"><%= p.created_at %></td>
     </tr>
+    <tr>
+      <th>タグ</th>
+      <td>
+        <%=
+          markup(
+            :ul,
+            :id => 'tag-it',
+            'data-message-id' => @message.id,
+            'data-path' => staff_tag_message_path(id: @message.id),
+          ) { |m| @message.tags.each { |tag| m.li tag.value } }
+        %>
+      </td>
+    </tr>
   </table>
 
   <div class="tree"><%= p.tree %></div>

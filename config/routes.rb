@@ -20,9 +20,11 @@ Rails
           end
         end
         get 'messages/count' => 'ajax#message_count'
+        post 'messages/:id/tag' => 'ajax#add_tag', :as => :tag_message
+        delete 'messages/:id/tag' => 'ajax#remove_tag'
         resources :messages, only: %i[index show destroy] do
           get :inbound, :outbound, :deleted, on: :collection
-          resource :reply, only: [:new, :create] do
+          resource :reply, only: %i[new create] do
             post :confirm
           end
         end
